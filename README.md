@@ -1,0 +1,2 @@
+# gbe.diagnostic
+gbe.diagnostic
