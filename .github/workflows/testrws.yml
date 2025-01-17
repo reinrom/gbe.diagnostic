@@ -27,22 +27,22 @@ jobs:
           cp -r workflow-templates/.github/workflows ./workflows
 
   # Service Job --------------------------------------------------------------------------
-  service:
-    strategy:
-        fail-fast: false
-        matrix:
-          role: [element]
-          build_type: [Release]
-          #runner: [wjr-self-wslubuntu64]
-          runner: [ubuntu-latest]
-    #uses: ./.github/workflows/service.yml
-    uses: reinrom/workflow.tamplates/.github/workflows/service.yml@main
-    with:
-      role: ${{ matrix.role }}
-      build_type: ${{ matrix.build_type }}
-      runner: ${{ matrix.runner }}
-    secrets:
-      token_sonar: ${{ secrets.SONAR_TOKEN }}
-      token_github: ${{ secrets.GITHUB_TOKEN }}
-      token_ci: ${{ secrets.CI_TOKEN_TMP }}
-      token: ${{ secrets.WORKFLOW_REPO_TOKEN }}
+  #service:
+  #  strategy:
+  #      fail-fast: false
+  #      matrix:
+  #        role: [element]
+  #        build_type: [Release]
+  #        #runner: [wjr-self-wslubuntu64]
+  #        runner: [ubuntu-latest]
+  #  #uses: ./.github/workflows/service.yml
+  #  uses: reinrom/workflow.tamplates/.github/workflows/service.yml@main
+  #  with:
+  #    role: ${{ matrix.role }}
+  #    build_type: ${{ matrix.build_type }}
+  #    runner: ${{ matrix.runner }}
+  #  secrets:
+  #    token_sonar: ${{ secrets.SONAR_TOKEN }}
+  #    token_github: ${{ secrets.GITHUB_TOKEN }}
+  #    token_ci: ${{ secrets.CI_TOKEN_TMP }}
+  #    token: ${{ secrets.WORKFLOW_REPO_TOKEN }}
